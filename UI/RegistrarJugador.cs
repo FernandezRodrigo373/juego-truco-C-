@@ -16,5 +16,12 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void btn_Registrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
