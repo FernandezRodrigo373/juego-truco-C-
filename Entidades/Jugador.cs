@@ -15,9 +15,6 @@ namespace FernandezBarbero.Rodrigo.TP2_
         private string nombreJugador;
         private string passwordJugador;
 
-
-      
-
         private bool cantarEnvido;
         private bool quererEnvido;
         private bool cantarTruco;
@@ -194,11 +191,11 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
             if (this.estaJugando == true)
             {
-                return "Esta Jugando aguarde a que termine";
+                return "Ocupado";
             }
             else if (this.estaJugando == false)
             {
-                return "Disponible para Jugar";
+                return "Disponible";
             }
             return "";
 
@@ -392,6 +389,29 @@ namespace FernandezBarbero.Rodrigo.TP2_
         public static bool operator !=(Jugador jugadorUno, Jugador jugadorDos)
         {
             return !(jugadorUno == jugadorDos);
+        }
+
+        public static bool operator +(Jugador unJugador, List<Jugador> listaJugadores)
+        {
+            bool yaExiste = false;
+
+            try
+            {
+                for (int i = 0; i < listaJugadores.Count; i++)
+                {
+                    if (unJugador is not null && listaJugadores[i] == unJugador)
+                    {
+                        yaExiste = true;
+                    }
+                }
+            }
+            catch (ArgumentNullException)
+            {
+
+                throw;
+            }
+
+            return yaExiste;
         }
 
         public string MostrarJugador()

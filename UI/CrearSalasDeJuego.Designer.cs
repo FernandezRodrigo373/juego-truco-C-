@@ -101,9 +101,9 @@
             // 
             // rtb_Sala
             // 
-            this.rtb_Sala.Location = new System.Drawing.Point(312, 240);
+            this.rtb_Sala.Location = new System.Drawing.Point(214, 227);
             this.rtb_Sala.Name = "rtb_Sala";
-            this.rtb_Sala.Size = new System.Drawing.Size(100, 96);
+            this.rtb_Sala.Size = new System.Drawing.Size(371, 110);
             this.rtb_Sala.TabIndex = 6;
             this.rtb_Sala.Text = "";
             // 

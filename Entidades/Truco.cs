@@ -42,7 +42,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 for (int i = 0; i < 3; i++)
                 {
                     Random randomCartaRepartida = new Random();
-                    int indiceCartaObtenida = randomCartaRepartida.Next(1, mazoDeCartas.Count);
+                    int indiceCartaObtenida = randomCartaRepartida.Next(0, mazoDeCartas.Count);
 
                     jugadorUno.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
                     mazoDeCartas.RemoveAt(indiceCartaObtenida);
@@ -680,7 +680,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         public List<CartaTruco> CrearMazoDeCartas()
         {
-            string rutaArchivo = $"{AppDomain.CurrentDomain.BaseDirectory}" + @"cartasTrucoUtn.xml";
+            string rutaArchivo = $"{AppDomain.CurrentDomain.BaseDirectory}" + @"valorCartasTruco.xml";
 
             List<CartaTruco> masoAux = Serializadora.DeserializarDesdeAXml<List<CartaTruco>>(rutaArchivo);
 

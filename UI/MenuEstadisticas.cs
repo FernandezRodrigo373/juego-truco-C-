@@ -77,7 +77,7 @@ namespace UI
         private void RefrescarDataGrid()
         {
             dtg_Datos.DataSource = null;
-            dtg_Datos.DataSource = SqlMesaConFechaCreacion.Leer();
+            dtg_Datos.DataSource = PartidasJugadasSql.Leer();
             dtg_Datos.Columns["NombreJugadorUno"].Visible = false;
             dtg_Datos.Columns["NombreJugadorDos"].Visible = false;
             dtg_Datos.Columns["PuntajeJugadorUno"].Visible = false;

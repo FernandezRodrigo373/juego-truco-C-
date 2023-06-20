@@ -36,13 +36,13 @@ namespace UI
         {
             dtg_Jugadores.DataSource = null;
             dtg_Jugadores.DataSource = JugadorSql.LeerSql();
-            dtg_Jugadores.Columns["PassWord"].Visible = false;
-            dtg_Jugadores.Columns["CantarEnvido"].Visible = false;
-            dtg_Jugadores.Columns["QuiereEnvido"].Visible = false;
-            dtg_Jugadores.Columns["CantarTruco"].Visible = false;
-            dtg_Jugadores.Columns["QuiereTruco"].Visible = false;
-            dtg_Jugadores.Columns["CantidadPuntos"].Visible = false;
-            dtg_Jugadores.Columns["EsMano"].Visible = false;
+            dtg_Jugadores.Columns["passwordJugador"].Visible = false;
+            dtg_Jugadores.Columns["cantarEnvido"].Visible = false;
+            dtg_Jugadores.Columns["quererEnvido"].Visible = false;
+            dtg_Jugadores.Columns["cantarTruco"].Visible = false;
+            dtg_Jugadores.Columns["quererTruco"].Visible = false;
+            dtg_Jugadores.Columns["cantidadPuntos"].Visible = false;
+            dtg_Jugadores.Columns["esMano"].Visible = false;
             dtg_Jugadores.Update();
             dtg_Jugadores.Refresh();
         }
@@ -66,9 +66,9 @@ namespace UI
         {
             if (dtg_Jugadores.SelectedRows.Count > 0)
             {
-                jugadorUno = (Jugador)dtg_Jugadores.CurrentRow.DataBoundItem;
+                jugadorDos = (Jugador)dtg_Jugadores.CurrentRow.DataBoundItem;
 
-                lbl_JugadorDos.Text = jugadorUno.NombreJugador;
+                lbl_JugadorDos.Text = jugadorDos.NombreJugador;
             }
         }
 
@@ -104,9 +104,9 @@ namespace UI
         {
             if (ValidarJugadoresNoSeanIguales(jugadorUno, jugadorDos) == true)
             {
-                int ultimoIdMesa = MesaDeJuego.ObtenerUltimoIdTabla(SqlMesaConFechaCreacion.Leer());
+                int ultimoIdMesa = MesaDeJuego.ObtenerUltimoIdTabla(PartidasJugadasSql.Leer());
                 ultimoIdMesa += 1;
-                int ultimoNumeroMesa = MesaDeJuego.ObtenerUltimoNumeroMesa(SqlMesaConFechaCreacion.Leer());
+                int ultimoNumeroMesa = MesaDeJuego.ObtenerUltimoNumeroMesa(PartidasJugadasSql.Leer());
                 ultimoNumeroMesa += 1;
 
 
@@ -121,21 +121,21 @@ namespace UI
                     JugadorSql.ModificarJugadorEstado(jugadorUno);
                     JugadorSql.ModificarJugadorEstado(jugadorDos);
 
-                    SqlMesaConFechaCreacion.Guardar(nuevaMesaConFecha);
+                    PartidasJugadasSql.Guardar(nuevaMesaConFecha);
                     MesaDeJuegoSql.Guardar(nuevaMesaJugar);
                     this.Close();
                 }
                 else
                 {
-                    if (jugadorUno.EstaEnPartida == "En Partida" && jugadorDos.EstaEnPartida == "En Partida")
+                    if (jugadorUno.EstaEnPartida == "Ocupado" && jugadorDos.EstaEnPartida == "Ocupado")
                     {
                         MessageBox.Show("No se pudo crear la sala los jugadores estan en partida...");
                     }
-                    else if (jugadorDos.EstaEnPartida == "En Partida")
+                    else if (jugadorDos.EstaEnPartida == "Ocupado")
                     {
                         MessageBox.Show($"Error. El jugador {jugadorDos.NombreJugador} se encuentra en una partida...");
                     }
-                    else if (jugadorUno.EstaEnPartida == "En Partida")
+                    else if (jugadorUno.EstaEnPartida == "Ocupado")
                     {
                         MessageBox.Show($"Error. El jugador {jugadorUno.NombreJugador} se encuentra en una partida...");
                     }

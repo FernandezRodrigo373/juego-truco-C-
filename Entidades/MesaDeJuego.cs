@@ -26,17 +26,12 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
 
 
-
-
         public MesaDeJuego(int idMesaDeJuego, int numeroMesaDeJuego, DateTime fecha)
         {
             this.idMesaDeJuego = idMesaDeJuego;
             this.numeroMesaDeJuego = numeroMesaDeJuego;
             this.fecha = fecha;
         }
-
-
-
 
         public MesaDeJuego(int idMesa, int numeroMesa, int puntajeJugadorUno, int puntajeJugadorDos, DateTime duracionPartida)
         {
@@ -54,6 +49,19 @@ namespace FernandezBarbero.Rodrigo.TP2_
             this.jugadorDos = jugadorDos;
             this.duracionPartida = duracionPartida;
         }
+
+        public Jugador JugadorUno 
+        { 
+            get { return this.jugadorUno; }
+            set { this.jugadorUno = value; }
+        }
+
+        public Jugador JugadorDos
+        {
+            get { return this.jugadorDos; }
+            set { this.jugadorDos = value; }
+        }
+
 
         public Action<string> DelegadoCartas
         {
@@ -126,18 +134,6 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         }
 
-        public Jugador JugadorUno 
-        { 
-            get { return this.jugadorUno; }
-            set { this.jugadorUno = value; }
-        }
-
-        public Jugador JugadorDos
-        {
-            get { return this.JugadorDos; }
-            set { this.jugadorUno = value; }
-        }
-
 
 
         public int PuntajeJugadorUno
@@ -192,6 +188,22 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 throw new ArgumentException("ERROR.", ex);
             }
+        }
+
+        public static DateTime TransformarTiempoDeJuego(string tiempo)
+        {
+            string[] arraytiempo = new string[2];
+            DateTime dateTime = DateTime.Now;
+            arraytiempo = tiempo.Split(':');
+
+            foreach (string item in arraytiempo)
+            {
+                dateTime.AddMinutes(Double.Parse(item));
+            }
+
+
+
+            return dateTime;
         }
 
         public static int ObtenerUltimoIdTabla(List<MesaDeJuego> mesaAux)

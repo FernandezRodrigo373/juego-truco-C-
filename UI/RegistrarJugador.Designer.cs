@@ -31,12 +31,14 @@
             this.btn_Registrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txb_NombreJugador = new System.Windows.Forms.TextBox();
+            this.txb_Clave = new System.Windows.Forms.TextBox();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.lbl_Clave = new System.Windows.Forms.Label();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Error = new System.Windows.Forms.Label();
+            this.lbl_Jugador = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Registrar
@@ -45,7 +47,7 @@
             this.btn_Registrar.Name = "btn_Registrar";
             this.btn_Registrar.Size = new System.Drawing.Size(206, 32);
             this.btn_Registrar.TabIndex = 0;
-            this.btn_Registrar.Text = "INGRESAR";
+            this.btn_Registrar.Text = "REGISTRAR";
             this.btn_Registrar.UseVisualStyleBackColor = true;
             this.btn_Registrar.Click += new System.EventHandler(this.btn_Registrar_Click);
             // 
@@ -65,28 +67,29 @@
             this.label3.Size = new System.Drawing.Size(0, 15);
             this.label3.TabIndex = 3;
             // 
-            // textBox1
+            // txb_NombreJugador
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 23);
-            this.textBox1.TabIndex = 4;
+            this.txb_NombreJugador.Location = new System.Drawing.Point(69, 129);
+            this.txb_NombreJugador.Name = "txb_NombreJugador";
+            this.txb_NombreJugador.Size = new System.Drawing.Size(206, 23);
+            this.txb_NombreJugador.TabIndex = 4;
             // 
-            // textBox2
+            // txb_Clave
             // 
-            this.textBox2.Location = new System.Drawing.Point(69, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 23);
-            this.textBox2.TabIndex = 5;
+            this.txb_Clave.Location = new System.Drawing.Point(69, 195);
+            this.txb_Clave.Name = "txb_Clave";
+            this.txb_Clave.Size = new System.Drawing.Size(206, 23);
+            this.txb_Clave.TabIndex = 5;
             // 
-            // button1
+            // btn_Salir
             // 
-            this.button1.Location = new System.Drawing.Point(245, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "SALIR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Salir.Location = new System.Drawing.Point(245, 339);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salir.TabIndex = 6;
+            this.btn_Salir.Text = "SALIR";
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // lbl_Clave
             // 
@@ -122,17 +125,37 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "CeliTruco";
             // 
+            // lbl_Error
+            // 
+            this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Location = new System.Drawing.Point(12, 342);
+            this.lbl_Error.Name = "lbl_Error";
+            this.lbl_Error.Size = new System.Drawing.Size(10, 15);
+            this.lbl_Error.TabIndex = 18;
+            this.lbl_Error.Text = ".";
+            // 
+            // lbl_Jugador
+            // 
+            this.lbl_Jugador.AutoSize = true;
+            this.lbl_Jugador.Location = new System.Drawing.Point(75, 301);
+            this.lbl_Jugador.Name = "lbl_Jugador";
+            this.lbl_Jugador.Size = new System.Drawing.Size(10, 15);
+            this.lbl_Jugador.TabIndex = 19;
+            this.lbl_Jugador.Text = ".";
+            // 
             // RegistrarJugador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 374);
+            this.Controls.Add(this.lbl_Jugador);
+            this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_Clave);
             this.Controls.Add(this.lbl_Usuario);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_Salir);
+            this.Controls.Add(this.txb_Clave);
+            this.Controls.Add(this.txb_NombreJugador);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Registrar);
@@ -148,11 +171,13 @@
         private System.Windows.Forms.Button btn_Registrar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txb_NombreJugador;
+        private System.Windows.Forms.TextBox txb_Clave;
+        private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label lbl_Clave;
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_Error;
+        private System.Windows.Forms.Label lbl_Jugador;
     }
 }

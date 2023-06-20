@@ -11,4 +11,10 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="valorCartasTruco.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

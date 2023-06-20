@@ -16,7 +16,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         static MesaDeJuegoSql()
         {
-            connectionStriing = @"Data Source = DESKTOP-P0TBI04; Database = UTN_SALAS_FECHA_DE_CREACION; Trusted_Connection=True";   //modificar
+            connectionStriing = @"Data Source = .; Database = DB_TRUCO; Trusted_Connection=True";   
             command = new SqlCommand();
             connection = new SqlConnection(connectionStriing);
             command.Connection = connection;
@@ -30,17 +30,17 @@ namespace FernandezBarbero.Rodrigo.TP2_
             try
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM SALAS_PARA_JUGAR";
+                command.CommandText = "SELECT * FROM MESADEJUEGOSALAS";
                 SqlDataReader dataReader = command.ExecuteReader();
-
+                DateTime tiempo = DateTime.Now;
 
                 while (dataReader.Read())
                 {
-                    salasDeJuego.Add(new MesaDeJuego(int.Parse(dataReader["ID_MESA"].ToString()),
-                        int.Parse(dataReader["NUMERO_MESA"].ToString()),
-                        Jugador.ObtenerJugador(dataReader["JUGADOR_UNO"].ToString()),
-                        Jugador.ObtenerJugador(dataReader["JUGADOR_DOS"].ToString()),
-                        MesaDeJuego.DuracionDeLaPartida(dataReader["FECHA_PARTIDA"].ToString())));
+                    salasDeJuego.Add(new MesaDeJuego(int.Parse(dataReader["IDMESADEJUEGO"].ToString()),
+                        int.Parse(dataReader["NUMEROMESADEJUEGO"].ToString()),
+                        Jugador.ObtenerJugador(dataReader["JUGADORUNO"].ToString()),
+                        Jugador.ObtenerJugador(dataReader["JUGADORDOS"].ToString()),
+                        tiempo));
                 }
 
                 return salasDeJuego;
@@ -62,12 +62,13 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"INSERT INTO SALAS_PARA_JUGAR (NUMERO_MESA, JUGADOR_UNO, JUGADOR_DOS, FECHA_PARTIDA)" +
-                    $"  VALUES (@NUMERO_MESA, @JUGADOR_UNO, @JUGADOR_DOS, @FECHA_PARTIDA)";
-                command.Parameters.AddWithValue("@NUMERO_MESA", mesaDeJuego.NumeroMesaDeJuego);
-                command.Parameters.AddWithValue("@JUGADOR_UNO", mesaDeJuego.JugadorUno.NombreJugador);
-                command.Parameters.AddWithValue("@JUGADOR_DOS", mesaDeJuego.JugadorDos.NombreJugador);
-                command.Parameters.AddWithValue("@FECHA_PARTIDA", mesaDeJuego.DuracionPartida);
+                command.CommandText = $"INSERT INTO MESADEJUEGOSALAS (NUMEROMESADEJUEGO, JUGADORUNO, JUGADORDOS, FECHA)" +
+                    $"  VALUES (@NUMEROMESADEJUEGO, @JUGADORUNO, @JUGADORDOS, @FECHA)";
+                command.Parameters.AddWithValue("@NUMEROMESADEJUEGO", mesaDeJuego.NumeroMesaDeJuego);
+                command.Parameters.AddWithValue("@JUGADORUNO", mesaDeJuego.JugadorUno.NombreJugador);
+                command.Parameters.AddWithValue("@JUGADORDOS", mesaDeJuego.JugadorDos.NombreJugador);
+                
+                command.Parameters.AddWithValue("@FECHA", mesaDeJuego.DuracionPartida);
 
                 command.ExecuteNonQuery();
             }
@@ -91,9 +92,9 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = "DELETE SALAS_PARA_JUGAR WHERE NUMERO_MESA = @NUMERO_MESA";
+                command.CommandText = "DELETE NUMEROMESADEJUEGO WHERE NUMEROMESADEJUEGO = @NUMEROMESADEJUEGO";
 
-                command.Parameters.AddWithValue("@NUMERO_MESA", mesaDeJuego.NumeroMesaDeJuego);
+                command.Parameters.AddWithValue("@NUMEROMESADEJUEGO", mesaDeJuego.NumeroMesaDeJuego);
 
                 command.ExecuteNonQuery();
             }

@@ -27,12 +27,12 @@ namespace UI
         private void RefrescarDataGrid()
         {
             dtg_Salas.DataSource = MesaDeJuegoSql.Leer();
-            dtg_Salas.Columns["JugadorUno"].Visible = false;
-            dtg_Salas.Columns["JugadorDos"].Visible = false;
-            dtg_Salas.Columns["PuntajeJugadorUno"].Visible = false;
-            dtg_Salas.Columns["PuntajeJugadorDos"].Visible = false;
-            dtg_Salas.Columns["FechaDePartido"].Visible = false;
-            dtg_Salas.Columns["DelegadoCartas"].Visible = false;
+            dtg_Salas.Columns["jugadorUno"].Visible = false;
+            dtg_Salas.Columns["jugadorDos"].Visible = false;
+            dtg_Salas.Columns["puntajeJugadorUno"].Visible = false;
+            dtg_Salas.Columns["puntajeJugadorDos"].Visible = false;
+            dtg_Salas.Columns["fecha"].Visible = false;
+            dtg_Salas.Columns["delegadoCartas"].Visible = false;
             dtg_Salas.Update();
             dtg_Salas.Refresh();
         }

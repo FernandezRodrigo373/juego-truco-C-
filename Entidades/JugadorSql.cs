@@ -17,7 +17,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         static JugadorSql()
         {
-            connectionString = @"Data Source = DESKTOP-P0TBI04; Database = UTN_SALAS_FECHA_DE_CREACION; Trusted_Connection=True";   //modificar
+            connectionString = @"Data Source=.;Initial Catalog=DB_Truco;Integrated Security=True";
             command = new SqlCommand();
             connection = new SqlConnection(connectionString);
             command.Connection = connection;
@@ -31,18 +31,18 @@ namespace FernandezBarbero.Rodrigo.TP2_
             try
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM JUGADORES_DATO";
+                command.CommandText = "SELECT * FROM TABLAJUGADOR";
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     listaDeJugadores.Add(new Jugador
-                        (int.Parse(dataReader["ID_JUGADOR"].ToString()),
-                        dataReader["NOMBRE"].ToString(),
-                        dataReader["CONTRASENIA"].ToString(),
-                        int.Parse(dataReader["PARTIDAS_GANADAS"].ToString()),
-                        int.Parse(dataReader["PARTIDAS_PERDIDAS"].ToString()),
-                        Jugador.ObtenerEstadoSql(dataReader["ESTADO"].ToString())));
+                        (int.Parse(dataReader["IDJUGADOR"].ToString()),
+                        dataReader["NOMBREJUGADOR"].ToString(),
+                        dataReader["PASSWORDJUGADOR"].ToString(),
+                        int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),
+                        int.Parse(dataReader["PARTIDASPERDIDASPORJUGADOR"].ToString()),
+                        Jugador.ObtenerEstadoSql(dataReader["ESTAJUGANDO"].ToString())));
                 }
 
                 return listaDeJugadores;
@@ -64,13 +64,13 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"INSERT INTO JUGADORES_DATO (NOMBRE, CONTRASENIA, PARTIDAS_GANADAS, PARTIDAS_PERDIDAS, ESTADO)" +
-                    $"  VALUES (@NOMBRE, @CONTRASENIA, @PARTIDAS_GANADAS, @PARTIDAS_PERDIDAS, @ESTADO)";
-                command.Parameters.AddWithValue("@NOMBRE", unJugador.NombreJugador);
-                command.Parameters.AddWithValue("@CONTRASENIA", unJugador.PassWordJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_GANADAS", unJugador.PartidasGanadasPorJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_PERDIDAS", unJugador.PartidasPerdidasPorJugador);
-                command.Parameters.AddWithValue("@ESTADO", Jugador.PasarEstadoInt(unJugador.estaJugando));
+                command.CommandText = $"INSERT INTO TABLAJUGADOR (NOMBREJUGADOR, PASSWORDJUGADOR, PARTIDASGANADASPORJUGADOR, PARTIDASPERDIDASPORJUGADOR, ESTAJUGANDO)" +
+                    $"  VALUES (@NOMBREJUGADOR, @PASSWORDJUGADOR, @PARTIDASGANADASPORJUGADOR, @PARTIDASPERDIDASPORJUGADOR, @ESTAJUGANDO)";
+                command.Parameters.AddWithValue("@NOMBREJUGADOR", unJugador.NombreJugador);
+                command.Parameters.AddWithValue("@PASSWORDJUGADOR", unJugador.PassWordJugador);
+                command.Parameters.AddWithValue("@PARTIDASGANADASPORJUGADOR", unJugador.PartidasGanadasPorJugador);
+                command.Parameters.AddWithValue("@PARTIDASPERDIDASPORJUGADOR", unJugador.PartidasPerdidasPorJugador);
+                command.Parameters.AddWithValue("@ESTAJUGANDO", Jugador.PasarEstadoInt(unJugador.estaJugando));
 
                 command.ExecuteNonQuery();
             }
@@ -92,18 +92,18 @@ namespace FernandezBarbero.Rodrigo.TP2_
             try
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM JUGADORES_DATO WHERE PARTIDAS_GANADAS >= 12 OR PARTIDAS_PERDIDAS >= 10";
+                command.CommandText = "SELECT * FROM TABLAJUGADOR WHERE PARTIDASGANADASPORJUGADOR >= 12 OR PARTIDASPERDIDASPORJUGADOR >= 10";
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     jugadores.Add(new Jugador
-                        (int.Parse(dataReader["ID_JUGADOR"].ToString()),
-                        dataReader["NOMBRE"].ToString(),
-                        dataReader["CONTRASENIA"].ToString(),
-                        int.Parse(dataReader["PARTIDAS_GANADAS"].ToString()),
-                        int.Parse(dataReader["PARTIDAS_PERDIDAS"].ToString()),
-                        Jugador.ObtenerEstadoSql(dataReader["ESTADO"].ToString())));
+                        (int.Parse(dataReader["IDJUGADOR"].ToString()),
+                        dataReader["NOMBREJUGADOR"].ToString(),
+                        dataReader["PASSWORDJUGADOR"].ToString(),
+                        int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),
+                        int.Parse(dataReader["PARTIDASPERDIDASPORJUGADOR"].ToString()),
+                        Jugador.ObtenerEstadoSql(dataReader["ESTAJUGANDO"].ToString())));
                 }
 
                 return jugadores;
@@ -125,12 +125,12 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = "UPDATE JUGADORES_DATO SET ESTADO = @ESTADo , PARTIDAS_PERDIDAS = @PARTIDAS_PERDIDAS, PARTIDAS_GANADAS = @PARTIDAS_GANADAS  WHERE NOMBRE = @NOMBRE";
-                command.Parameters.AddWithValue("@NOMBRE", unJugador.NombreJugador);
-                command.Parameters.AddWithValue("@CONTRASENIA", unJugador.PassWordJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_GANADAS", unJugador.PartidasGanadasPorJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_PERDIDAS", unJugador.PartidasPerdidasPorJugador);
-                command.Parameters.AddWithValue("@ESTADO", unJugador.estaJugando = false);
+                command.CommandText = "UPDATE TABLAJUGADOR SET ESTAJUGANDO = @ESTAJUGANDO , PARTIDASPERDIDASPORJUGADOR = @PARTIDASPERDIDASPORJUGADOR, PARTIDASGANADASPORJUGADOR = @PARTIDASGANADASPORJUGADOR  WHERE NOMBREJUGADOR = @NOMBREJUGADOR";
+                command.Parameters.AddWithValue("@NOMBREJUGADOR", unJugador.NombreJugador);
+                command.Parameters.AddWithValue("@PASSWORDJUGADOR", unJugador.PassWordJugador);
+                command.Parameters.AddWithValue("@PARTIDASGANADASPORJUGADOR", unJugador.PartidasGanadasPorJugador);
+                command.Parameters.AddWithValue("@PARTIDASPERDIDASPORJUGADOR", unJugador.PartidasPerdidasPorJugador);
+                command.Parameters.AddWithValue("@ESTAJUGANDO", unJugador.estaJugando = false);
 
                 command.ExecuteNonQuery();
             }
@@ -154,12 +154,12 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = "UPDATE JUGADORES_DATO SET  ESTADO = @ESTADO  WHERE NOMBRE = @NOMBRE";
-                command.Parameters.AddWithValue("@NOMBRE", unJugador.NombreJugador);
-                command.Parameters.AddWithValue("@CONTRASENIA", unJugador.PassWordJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_GANADAS", unJugador.PartidasGanadasPorJugador);
-                command.Parameters.AddWithValue("@PARTIDAS_PERDIDAS", unJugador.PartidasPerdidasPorJugador);
-                command.Parameters.AddWithValue("@ESTADO", Jugador.PasarEstadoInt(unJugador.estaJugando));
+                command.CommandText = "UPDATE TABLAJUGADOR SET  ESTAJUGANDO = @ESTAJUGANDO  WHERE NOMBREJUGADOR = @NOMBREJUGADOR";
+                command.Parameters.AddWithValue("@NOMBREJUGADOR", unJugador.NombreJugador);
+                command.Parameters.AddWithValue("@PASSWORDJUGADOR", unJugador.PassWordJugador);
+                command.Parameters.AddWithValue("@PARTIDASGANADASPORJUGADOR", unJugador.PartidasGanadasPorJugador);
+                command.Parameters.AddWithValue("@PARTIDASPERDIDASPORJUGADOR", unJugador.PartidasPerdidasPorJugador);
+                command.Parameters.AddWithValue("@ESTAJUGANDO", Jugador.PasarEstadoInt(unJugador.estaJugando));
 
                 command.ExecuteNonQuery();
             }
@@ -184,18 +184,18 @@ namespace FernandezBarbero.Rodrigo.TP2_
             try
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM JUGADORES_DATO WHERE PARTIDAS_GANADAS >= 26";
+                command.CommandText = "SELECT * FROM TABLAJUGADOR WHERE PARTIDASGANADASPORJUGADOR >= 26";
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     listaDeJugadores.Add(new Jugador
                         (int.Parse(dataReader["ID_JUGADOR"].ToString()),
-                        dataReader["NOMBRE"].ToString(),
-                        dataReader["CONTRASENIA"].ToString(),
-                        int.Parse(dataReader["PARTIDAS_GANADAS"].ToString()),
-                        int.Parse(dataReader["PARTIDAS_PERDIDAS"].ToString()),
-                        Jugador.ObtenerEstadoSql(dataReader["ESTADO"].ToString())));
+                        dataReader["NOMBREJUGADOR"].ToString(),
+                        dataReader["PASSWORDJUGADOR"].ToString(),
+                        int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),
+                        int.Parse(dataReader["PARTIDASPERDIDASPORJUGADOR"].ToString()),
+                        Jugador.ObtenerEstadoSql(dataReader["ESTAJUGANDO"].ToString())));
                 }
 
                 return listaDeJugadores;
@@ -219,18 +219,18 @@ namespace FernandezBarbero.Rodrigo.TP2_
             try
             {
                 connection.Open();
-                command.CommandText = "SELECT * FROM JUGADORES_DATO WHERE PARTIDAS_GANADAS = 0 AND PARTIDAS_PERDIDAS = 0";
+                command.CommandText = "SELECT * FROM TABLAJUGADOR WHERE PARTIDASGANADASPORJUGADOR = 0 AND PARTIDASPERDIDASPORJUGADOR = 0";
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     jugadores.Add(new Jugador
                         (int.Parse(dataReader["ID_JUGADOR"].ToString()),
-                        dataReader["NOMBRE"].ToString(),
-                        dataReader["CONTRASENIA"].ToString(),
-                        int.Parse(dataReader["PARTIDAS_GANADAS"].ToString()),
-                        int.Parse(dataReader["PARTIDAS_PERDIDAS"].ToString()),
-                        Jugador.ObtenerEstadoSql(dataReader["ESTADO"].ToString())));
+                        dataReader["NOMBREJUGADOR"].ToString(),
+                        dataReader["PASSWORDJUGADOR"].ToString(),
+                        int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),
+                        int.Parse(dataReader["PARTIDASPERDIDASPORJUGADOR"].ToString()),
+                        Jugador.ObtenerEstadoSql(dataReader["ESTAJUGANDO"].ToString())));
                 }
 
                 return jugadores;
