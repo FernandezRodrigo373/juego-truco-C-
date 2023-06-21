@@ -23,7 +23,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
         public static T DeserializarDesdeAXml<T>(string ruta)
         {
             XmlRootAttribute xRoot = new XmlRootAttribute();
-            xRoot.ElementName = "ArrayOfCarta";
+            xRoot.ElementName = "ArrayOfCartaTruco";
             xRoot.IsNullable = true;
 
             using (StreamReader streamReader = new StreamReader(ruta))

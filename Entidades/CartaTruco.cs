@@ -60,15 +60,15 @@ namespace FernandezBarbero.Rodrigo.TP2_
         {
             foreach (CartaTruco unaCarta in jugadorUno.CartasObtenidas)
             {
-                if (unaCarta.numero > 9 && unaCarta.numero < 13)
+                if (unaCarta.numero == 10 && unaCarta.numero == 11 && unaCarta.numero == 12)
                 {
                     unaCarta.valor = 0;
                 }
-            }   
-            
+            }
+
             foreach (CartaTruco unaCarta in jugadorDos.CartasObtenidas)
             {
-                if (unaCarta.numero > 9 && unaCarta.numero < 13)
+                if (unaCarta.numero == 10 && unaCarta.numero == 11 && unaCarta.numero == 12)
                 {
                     unaCarta.valor = 0;
                 }

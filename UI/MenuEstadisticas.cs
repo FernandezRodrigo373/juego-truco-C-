@@ -27,14 +27,14 @@ namespace UI
         {
             dtg_Datos.DataSource = null;
             dtg_Datos.DataSource = JugadorSql.FiltrarJugadoresPorCantidadPartidosGanadas();
-            dtg_Datos.Columns["PassWord"].Visible = false;
-            dtg_Datos.Columns["CantarEnvido"].Visible = false;
-            dtg_Datos.Columns["QuererEnvido"].Visible = false;
-            dtg_Datos.Columns["CantarTruco"].Visible = false;
-            dtg_Datos.Columns["QuererTruco"].Visible = false;
-            dtg_Datos.Columns["CantidadPuntos"].Visible = false;
-            dtg_Datos.Columns["EsMano"].Visible = false;
-            dtg_Datos.Columns["EstaEnPartida"].Visible = false;
+            dtg_Datos.Columns["passwordJugador"].Visible = false;
+            dtg_Datos.Columns["cantarEnvido"].Visible = false;
+            dtg_Datos.Columns["quererEnvido"].Visible = false;
+            dtg_Datos.Columns["cantarTruco"].Visible = false;
+            dtg_Datos.Columns["quererTruco"].Visible = false;
+            dtg_Datos.Columns["cantidadPuntos"].Visible = false;
+            dtg_Datos.Columns["esMano"].Visible = false;
+            //dtg_Datos.Columns["estaJugando"].Visible = false;
         
         }
 
@@ -42,29 +42,31 @@ namespace UI
         {
             dtg_Datos.DataSource = null;
             dtg_Datos.DataSource = JugadorSql.FiltrarJugadoresConMasPartidas();
-            dtg_Datos.Columns["PassWord"].Visible = false;
-            dtg_Datos.Columns["CantarEnvido"].Visible = false;
-            dtg_Datos.Columns["QuererEnvido"].Visible = false;
-            dtg_Datos.Columns["CantarTruco"].Visible = false;
-            dtg_Datos.Columns["QuererTruco"].Visible = false;
-            dtg_Datos.Columns["CantidadPuntos"].Visible = false;
-            dtg_Datos.Columns["EsMano"].Visible = false;
-            dtg_Datos.Columns["EstaEnPartida"].Visible = false;
-        
+            dtg_Datos.Columns["passwordJugador"].Visible = false;
+            dtg_Datos.Columns["cantarEnvido"].Visible = false;
+            dtg_Datos.Columns["quererEnvido"].Visible = false;
+            dtg_Datos.Columns["cantarTruco"].Visible = false;
+            dtg_Datos.Columns["quererTruco"].Visible = false;
+            dtg_Datos.Columns["cantidadPuntos"].Visible = false;
+            dtg_Datos.Columns["esMano"].Visible = false;
+            //dtg_Datos.Columns["estaJugando"].Visible = false;
+
+
         }
 
         private void btn_JugadoresSinPartidas_Click(object sender, EventArgs e)
         {
             dtg_Datos.DataSource = null;
             dtg_Datos.DataSource = JugadorSql.FiltrarJugadoresSinPartidas();
-            dtg_Datos.Columns["PassWord"].Visible = false;
-            dtg_Datos.Columns["CantarEnvido"].Visible = false;
-            dtg_Datos.Columns["QuererEnvido"].Visible = false;
-            dtg_Datos.Columns["CantarTruco"].Visible = false;
-            dtg_Datos.Columns["QuererTruco"].Visible = false;
-            dtg_Datos.Columns["CantidadPuntos"].Visible = false;
-            dtg_Datos.Columns["EsMano"].Visible = false;
-            dtg_Datos.Columns["EstaEnPartida"].Visible = false;
+            dtg_Datos.Columns["passwordJugador"].Visible = false;
+            dtg_Datos.Columns["cantarEnvido"].Visible = false;
+            dtg_Datos.Columns["quererEnvido"].Visible = false;
+            dtg_Datos.Columns["cantarTruco"].Visible = false;
+            dtg_Datos.Columns["quererTruco"].Visible = false;
+            dtg_Datos.Columns["cantidadPuntos"].Visible = false;
+            dtg_Datos.Columns["esMano"].Visible = false;
+            //dtg_Datos.Columns["estaJugando"].Visible = false;
+
 
         }
 

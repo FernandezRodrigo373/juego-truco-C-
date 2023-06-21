@@ -43,11 +43,16 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
                 for (int i = 0; i < 3; i++)
                 {
-                    int indiceCartaObtenida = randomCartaRepartida.Next(0, mazoDeCartas.Count);
+                    int indiceCartaObtenida = randomCartaRepartida.Next(1, mazoDeCartas.Count);
 
                     if (indiceCartaObtenida >= 0 && indiceCartaObtenida < mazoDeCartas.Count)
                     {
                         jugadorUno.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
+                        mazoDeCartas.RemoveAt(indiceCartaObtenida);
+
+                        indiceCartaObtenida = randomCartaRepartida.Next(1, mazoDeCartas.Count);
+
+                        jugadorDos.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
                         mazoDeCartas.RemoveAt(indiceCartaObtenida);
                     }
                     else
@@ -623,23 +628,6 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
             CartaTruco.EstablecerValorParaEnvido(jugadorUno, jugadorDos);
 
-            if (jugadorUno.CartasObtenidas[0].Palo == jugadorUno.CartasObtenidas[1].Palo)
-            {
-                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[0].Numero + jugadorUno.CartasObtenidas[1].Numero;
-            }
-            else if (jugadorUno.CartasObtenidas[0].Palo == jugadorUno.CartasObtenidas[2].Palo)
-            {
-                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[0].Numero + jugadorUno.CartasObtenidas[2].Numero;
-            }
-            else if (jugadorUno.CartasObtenidas[1].Palo == jugadorUno.CartasObtenidas[2].Palo)
-            {
-                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[1].Numero + jugadorUno.CartasObtenidas[2].Numero;
-            }
-            else
-            {
-                sumaCartasEnvidoJugadorUno = 0;
-            }
-
             if (jugadorDos.CartasObtenidas[0].Palo == jugadorDos.CartasObtenidas[1].Palo)
             {
                 sumaCartasEnvidoJugadorDos = jugadorDos.CartasObtenidas[0].Numero + jugadorDos.CartasObtenidas[1].Numero;
@@ -655,6 +643,23 @@ namespace FernandezBarbero.Rodrigo.TP2_
             else
             {
                 sumaCartasEnvidoJugadorDos = 0;
+            }
+
+            if (jugadorUno.CartasObtenidas[0].Palo == jugadorUno.CartasObtenidas[1].Palo)
+            {
+                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[0].Numero + jugadorUno.CartasObtenidas[1].Numero;
+            }
+            else if (jugadorUno.CartasObtenidas[0].Palo == jugadorUno.CartasObtenidas[2].Palo)
+            {
+                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[0].Numero + jugadorUno.CartasObtenidas[2].Numero;
+            }
+            else if (jugadorUno.CartasObtenidas[1].Palo == jugadorUno.CartasObtenidas[2].Palo)
+            {
+                sumaCartasEnvidoJugadorUno = jugadorUno.CartasObtenidas[1].Numero + jugadorUno.CartasObtenidas[2].Numero;
+            }
+            else
+            {
+                sumaCartasEnvidoJugadorUno = 0;
             }
 
 

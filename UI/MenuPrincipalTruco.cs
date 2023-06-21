@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FernandezBarbero.Rodrigo.TP2_;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace UI
 {
@@ -43,7 +45,51 @@ namespace UI
 
         private void MenuPrincipalTruco_Load(object sender, EventArgs e)
         {
+            List<CartaTruco> cartas = new List<CartaTruco>
+            {
+            new CartaTruco { Numero = 1, Palo = "Espada", Valor = 14 },
+            new CartaTruco { Numero = 2, Palo = "Espada", Valor = 9 },
+            new CartaTruco { Numero = 3, Palo = "Espada", Valor = 10 },
+            new CartaTruco { Numero = 4, Palo = "Espada", Valor = 1 },
+            new CartaTruco { Numero = 5, Palo = "Espada", Valor = 2 },
+            new CartaTruco { Numero = 6, Palo = "Espada", Valor = 3 },
+            new CartaTruco { Numero = 7, Palo = "Espada", Valor = 12 },
+            new CartaTruco { Numero = 10, Palo = "Espada", Valor = 5 },
+            new CartaTruco { Numero = 11, Palo = "Espada", Valor = 6 },
+            new CartaTruco { Numero = 12, Palo = "Espada", Valor = 7 },
+            new CartaTruco { Numero = 1, Palo = "Oro", Valor = 8 },
+            new CartaTruco { Numero = 2, Palo = "Oro", Valor = 9 },
+            new CartaTruco { Numero = 3, Palo = "Oro", Valor = 10 },
+            new CartaTruco { Numero = 4, Palo = "Oro", Valor = 1 },
+            new CartaTruco { Numero = 5, Palo = "Oro", Valor = 2 },
+            new CartaTruco { Numero = 6, Palo = "Oro", Valor = 3 },
+            new CartaTruco { Numero = 7, Palo = "Oro", Valor = 11 },
+            new CartaTruco { Numero = 10, Palo = "Oro", Valor = 5 },
+            new CartaTruco { Numero = 11, Palo = "Oro", Valor = 6 },
+            new CartaTruco { Numero = 12, Palo = "Oro", Valor = 7 },
+            new CartaTruco { Numero = 1, Palo = "Copa", Valor = 8 },
+            new CartaTruco { Numero = 2, Palo = "Copa", Valor = 9 },
+            new CartaTruco { Numero = 3, Palo = "Copa", Valor = 10 },
+            new CartaTruco { Numero = 4, Palo = "Copa", Valor = 1 },
+            new CartaTruco { Numero = 5, Palo = "Copa", Valor = 2 },
+            new CartaTruco { Numero = 6, Palo = "Copa", Valor = 3 },
+            new CartaTruco { Numero = 7, Palo = "Copa", Valor = 4 },
+            new CartaTruco { Numero = 10, Palo = "Copa", Valor = 5 },
+            new CartaTruco { Numero = 11, Palo = "Copa", Valor = 6 },
+            new CartaTruco { Numero = 12, Palo = "Copa", Valor = 7 },
+            new CartaTruco { Numero = 1, Palo = "Basto", Valor = 13 },
+            new CartaTruco { Numero = 2, Palo = "Basto", Valor = 9 },
+            new CartaTruco { Numero = 3, Palo = "Basto", Valor = 10 },
+            new CartaTruco { Numero = 4, Palo = "Basto", Valor = 1 },
+            new CartaTruco { Numero = 5, Palo = "Basto", Valor = 2 },
+            new CartaTruco { Numero = 6, Palo = "Basto", Valor = 3 },
+            new CartaTruco { Numero = 7, Palo = "Basto", Valor = 4 },
+            new CartaTruco { Numero = 10, Palo = "Basto", Valor = 5 },
+            new CartaTruco { Numero = 11, Palo = "Basto", Valor = 6 },
+            new CartaTruco { Numero = 12, Palo = "Basto", Valor = 7 }
+            };
 
+            Serializadora.SerializarAXml("valorCartasTruco.xml", cartas);
         }
     }
 }

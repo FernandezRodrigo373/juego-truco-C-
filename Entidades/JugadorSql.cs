@@ -190,7 +190,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 while (dataReader.Read())
                 {
                     listaDeJugadores.Add(new Jugador
-                        (int.Parse(dataReader["ID_JUGADOR"].ToString()),
+                        (int.Parse(dataReader["IDJUGADOR"].ToString()),
                         dataReader["NOMBREJUGADOR"].ToString(),
                         dataReader["PASSWORDJUGADOR"].ToString(),
                         int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),
@@ -225,7 +225,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 while (dataReader.Read())
                 {
                     jugadores.Add(new Jugador
-                        (int.Parse(dataReader["ID_JUGADOR"].ToString()),
+                        (int.Parse(dataReader["IDJUGADOR"].ToString()),
                         dataReader["NOMBREJUGADOR"].ToString(),
                         dataReader["PASSWORDJUGADOR"].ToString(),
                         int.Parse(dataReader["PARTIDASGANADASPORJUGADOR"].ToString()),

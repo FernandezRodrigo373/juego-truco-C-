@@ -92,7 +92,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = "DELETE NUMEROMESADEJUEGO WHERE NUMEROMESADEJUEGO = @NUMEROMESADEJUEGO";
+                command.CommandText = "DELETE MESADEJUEGOSALAS WHERE NUMEROMESADEJUEGO = @NUMEROMESADEJUEGO";
 
                 command.Parameters.AddWithValue("@NUMEROMESADEJUEGO", mesaDeJuego.NumeroMesaDeJuego);
 
