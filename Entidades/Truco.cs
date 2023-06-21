@@ -39,18 +39,21 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
             try
             {
+                Random randomCartaRepartida = new Random();
+
                 for (int i = 0; i < 3; i++)
                 {
-                    Random randomCartaRepartida = new Random();
                     int indiceCartaObtenida = randomCartaRepartida.Next(0, mazoDeCartas.Count);
 
-                    jugadorUno.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
-                    mazoDeCartas.RemoveAt(indiceCartaObtenida);
-
-                    indiceCartaObtenida = randomCartaRepartida.Next(1, mazoDeCartas.Count);
-
-                    jugadorDos.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
-                    mazoDeCartas.RemoveAt(indiceCartaObtenida);
+                    if (indiceCartaObtenida >= 0 && indiceCartaObtenida < mazoDeCartas.Count)
+                    {
+                        jugadorUno.CartasObtenidas.Add(mazoDeCartas[indiceCartaObtenida]);
+                        mazoDeCartas.RemoveAt(indiceCartaObtenida);
+                    }
+                    else
+                    {
+                        Console.WriteLine("El índice generado está fuera del rango válido.");
+                    }
                 }
 
 

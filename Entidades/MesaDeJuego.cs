@@ -278,19 +278,19 @@ namespace FernandezBarbero.Rodrigo.TP2_
         }
 
 
-        public void JugarPartida(Truco maso, CancellationToken ct)
+        public void JugarPartida(Truco mazo, CancellationToken ct)
         {
-            List<CartaTruco> masoCartas;
-            masoCartas = maso.CrearMazoDeCartas();
+            List<CartaTruco> mazoDeCartas;
+            mazoDeCartas = mazo.CrearMazoDeCartas();
 
-            maso.RepartirCartas(masoCartas, this.jugadorUno, this.jugadorDos);
+            mazo.RepartirCartas(mazoDeCartas, this.jugadorUno, this.jugadorDos);
 
             Random tiempoDeEspera = new Random();
             Thread.Sleep(tiempoDeEspera.Next(1500, 3000));
 
             MostrarDatosPartida();
 
-            this.delegadoCartas?.Invoke(maso.AcumularPuntosJugadores(this.jugadorUno, this.jugadorDos));
+            this.delegadoCartas?.Invoke(mazo.AcumularPuntosJugadores(this.jugadorUno, this.jugadorDos));
 
 
             while ((this.jugadorUno.CantidadPuntos <= 15 && this.jugadorDos.CantidadPuntos <= 15) && !ct.IsCancellationRequested)
@@ -298,11 +298,11 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 this.jugadorUno.CartasObtenidas.Clear();
                 this.jugadorDos.CartasObtenidas.Clear();
 
-                masoCartas = maso.CrearMazoDeCartas();
-                maso.RepartirCartas(masoCartas, this.jugadorUno, this.jugadorDos);
+                mazoDeCartas = mazo.CrearMazoDeCartas();
+                mazo.RepartirCartas(mazoDeCartas, this.jugadorUno, this.jugadorDos);
                 MostrarDatosPartida();
 
-                this.delegadoCartas?.Invoke(maso.AcumularPuntosJugadores(this.jugadorUno, this.jugadorDos));
+                this.delegadoCartas?.Invoke(mazo.AcumularPuntosJugadores(this.jugadorUno, this.jugadorDos));
             }
 
             if (ct.IsCancellationRequested)
