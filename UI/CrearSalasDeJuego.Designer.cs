@@ -42,7 +42,7 @@
             // 
             // btn_SeleccionarJugadorUno
             // 
-            this.btn_SeleccionarJugadorUno.Location = new System.Drawing.Point(59, 227);
+            this.btn_SeleccionarJugadorUno.Location = new System.Drawing.Point(12, 178);
             this.btn_SeleccionarJugadorUno.Name = "btn_SeleccionarJugadorUno";
             this.btn_SeleccionarJugadorUno.Size = new System.Drawing.Size(118, 23);
             this.btn_SeleccionarJugadorUno.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // btn_JugadorDos
             // 
-            this.btn_JugadorDos.Location = new System.Drawing.Point(59, 256);
+            this.btn_JugadorDos.Location = new System.Drawing.Point(12, 207);
             this.btn_JugadorDos.Name = "btn_JugadorDos";
             this.btn_JugadorDos.Size = new System.Drawing.Size(118, 23);
             this.btn_JugadorDos.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // btn_CrearSala
             // 
-            this.btn_CrearSala.Location = new System.Drawing.Point(59, 314);
+            this.btn_CrearSala.Location = new System.Drawing.Point(12, 328);
             this.btn_CrearSala.Name = "btn_CrearSala";
             this.btn_CrearSala.Size = new System.Drawing.Size(118, 23);
             this.btn_CrearSala.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // btn_MostrarSala
             // 
-            this.btn_MostrarSala.Location = new System.Drawing.Point(59, 285);
+            this.btn_MostrarSala.Location = new System.Drawing.Point(12, 299);
             this.btn_MostrarSala.Name = "btn_MostrarSala";
             this.btn_MostrarSala.Size = new System.Drawing.Size(118, 23);
             this.btn_MostrarSala.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(668, 314);
+            this.btn_Salir.Location = new System.Drawing.Point(668, 328);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 4;
@@ -101,35 +101,35 @@
             // 
             // rtb_Sala
             // 
-            this.rtb_Sala.Location = new System.Drawing.Point(214, 227);
+            this.rtb_Sala.Location = new System.Drawing.Point(210, 179);
             this.rtb_Sala.Name = "rtb_Sala";
-            this.rtb_Sala.Size = new System.Drawing.Size(371, 110);
+            this.rtb_Sala.Size = new System.Drawing.Size(371, 172);
             this.rtb_Sala.TabIndex = 6;
             this.rtb_Sala.Text = "";
             // 
             // lbl_JugadorUno
             // 
             this.lbl_JugadorUno.AutoSize = true;
-            this.lbl_JugadorUno.Location = new System.Drawing.Point(58, 369);
+            this.lbl_JugadorUno.Location = new System.Drawing.Point(587, 182);
             this.lbl_JugadorUno.Name = "lbl_JugadorUno";
-            this.lbl_JugadorUno.Size = new System.Drawing.Size(38, 15);
+            this.lbl_JugadorUno.Size = new System.Drawing.Size(10, 15);
             this.lbl_JugadorUno.TabIndex = 7;
-            this.lbl_JugadorUno.Text = "label1";
+            this.lbl_JugadorUno.Text = ".";
             // 
             // lbl_JugadorDos
             // 
             this.lbl_JugadorDos.AutoSize = true;
-            this.lbl_JugadorDos.Location = new System.Drawing.Point(60, 406);
+            this.lbl_JugadorDos.Location = new System.Drawing.Point(587, 227);
             this.lbl_JugadorDos.Name = "lbl_JugadorDos";
-            this.lbl_JugadorDos.Size = new System.Drawing.Size(38, 15);
+            this.lbl_JugadorDos.Size = new System.Drawing.Size(10, 15);
             this.lbl_JugadorDos.TabIndex = 8;
-            this.lbl_JugadorDos.Text = "label2";
+            this.lbl_JugadorDos.Text = ".";
             // 
             // CrearSalasDeJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(756, 373);
             this.Controls.Add(this.lbl_JugadorDos);
             this.Controls.Add(this.lbl_JugadorUno);
             this.Controls.Add(this.rtb_Sala);

@@ -39,7 +39,7 @@
             // 
             // btn_HistorialDePartidas
             // 
-            this.btn_HistorialDePartidas.Location = new System.Drawing.Point(12, 302);
+            this.btn_HistorialDePartidas.Location = new System.Drawing.Point(12, 271);
             this.btn_HistorialDePartidas.Name = "btn_HistorialDePartidas";
             this.btn_HistorialDePartidas.Size = new System.Drawing.Size(248, 23);
             this.btn_HistorialDePartidas.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // btn_JugadoresConMasPartidas
             // 
-            this.btn_JugadoresConMasPartidas.Location = new System.Drawing.Point(12, 210);
+            this.btn_JugadoresConMasPartidas.Location = new System.Drawing.Point(12, 184);
             this.btn_JugadoresConMasPartidas.Name = "btn_JugadoresConMasPartidas";
             this.btn_JugadoresConMasPartidas.Size = new System.Drawing.Size(248, 23);
             this.btn_JugadoresConMasPartidas.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // btn_JugadoresConMasVictorias
             // 
-            this.btn_JugadoresConMasVictorias.Location = new System.Drawing.Point(12, 239);
+            this.btn_JugadoresConMasVictorias.Location = new System.Drawing.Point(12, 213);
             this.btn_JugadoresConMasVictorias.Name = "btn_JugadoresConMasVictorias";
             this.btn_JugadoresConMasVictorias.Size = new System.Drawing.Size(248, 23);
             this.btn_JugadoresConMasVictorias.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // btn_JugadoresSinPartidas
             // 
-            this.btn_JugadoresSinPartidas.Location = new System.Drawing.Point(12, 273);
+            this.btn_JugadoresSinPartidas.Location = new System.Drawing.Point(12, 242);
             this.btn_JugadoresSinPartidas.Name = "btn_JugadoresSinPartidas";
             this.btn_JugadoresSinPartidas.Size = new System.Drawing.Size(248, 23);
             this.btn_JugadoresSinPartidas.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(538, 302);
+            this.btn_Salir.Location = new System.Drawing.Point(437, 271);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 4;
@@ -94,14 +94,14 @@
             this.dtg_Datos.Location = new System.Drawing.Point(12, 12);
             this.dtg_Datos.Name = "dtg_Datos";
             this.dtg_Datos.RowTemplate.Height = 25;
-            this.dtg_Datos.Size = new System.Drawing.Size(601, 150);
+            this.dtg_Datos.Size = new System.Drawing.Size(500, 150);
             this.dtg_Datos.TabIndex = 5;
             // 
             // MenuEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 359);
+            this.ClientSize = new System.Drawing.Size(523, 312);
             this.Controls.Add(this.dtg_Datos);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_JugadoresSinPartidas);

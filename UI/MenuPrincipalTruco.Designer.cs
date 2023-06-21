@@ -36,9 +36,9 @@
             // 
             // btn_CrearSala
             // 
-            this.btn_CrearSala.Location = new System.Drawing.Point(38, 36);
+            this.btn_CrearSala.Location = new System.Drawing.Point(38, 12);
             this.btn_CrearSala.Name = "btn_CrearSala";
-            this.btn_CrearSala.Size = new System.Drawing.Size(149, 23);
+            this.btn_CrearSala.Size = new System.Drawing.Size(202, 70);
             this.btn_CrearSala.TabIndex = 0;
             this.btn_CrearSala.Text = "CREAR SALA";
             this.btn_CrearSala.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // btn_MostrarSalas
             // 
-            this.btn_MostrarSalas.Location = new System.Drawing.Point(38, 78);
+            this.btn_MostrarSalas.Location = new System.Drawing.Point(294, 12);
             this.btn_MostrarSalas.Name = "btn_MostrarSalas";
-            this.btn_MostrarSalas.Size = new System.Drawing.Size(149, 23);
+            this.btn_MostrarSalas.Size = new System.Drawing.Size(198, 70);
             this.btn_MostrarSalas.TabIndex = 1;
             this.btn_MostrarSalas.Text = "MOSTRAR SALAS";
             this.btn_MostrarSalas.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btn_RegistrarJugador
             // 
-            this.btn_RegistrarJugador.Location = new System.Drawing.Point(38, 116);
+            this.btn_RegistrarJugador.Location = new System.Drawing.Point(38, 160);
             this.btn_RegistrarJugador.Name = "btn_RegistrarJugador";
-            this.btn_RegistrarJugador.Size = new System.Drawing.Size(149, 23);
+            this.btn_RegistrarJugador.Size = new System.Drawing.Size(202, 70);
             this.btn_RegistrarJugador.TabIndex = 2;
             this.btn_RegistrarJugador.Text = "REGISTRAR JUGADOR";
             this.btn_RegistrarJugador.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // btn_MostrarEstaditicas
             // 
-            this.btn_MostrarEstaditicas.Location = new System.Drawing.Point(38, 159);
+            this.btn_MostrarEstaditicas.Location = new System.Drawing.Point(294, 160);
             this.btn_MostrarEstaditicas.Name = "btn_MostrarEstaditicas";
-            this.btn_MostrarEstaditicas.Size = new System.Drawing.Size(149, 23);
+            this.btn_MostrarEstaditicas.Size = new System.Drawing.Size(198, 70);
             this.btn_MostrarEstaditicas.TabIndex = 3;
             this.btn_MostrarEstaditicas.Text = "MOSTRAR ESTADISTICAS";
             this.btn_MostrarEstaditicas.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 211);
+            this.ClientSize = new System.Drawing.Size(530, 242);
             this.Controls.Add(this.btn_MostrarEstaditicas);
             this.Controls.Add(this.btn_RegistrarJugador);
             this.Controls.Add(this.btn_MostrarSalas);

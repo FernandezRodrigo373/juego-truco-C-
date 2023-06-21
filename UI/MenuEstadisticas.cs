@@ -65,7 +65,7 @@ namespace UI
             dtg_Datos.Columns["quererTruco"].Visible = false;
             dtg_Datos.Columns["cantidadPuntos"].Visible = false;
             dtg_Datos.Columns["esMano"].Visible = false;
-            //dtg_Datos.Columns["estaJugando"].Visible = false;
+            ////dtg_Datos.Columns["estaJugando"].Visible = false;
 
 
         }
