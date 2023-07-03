@@ -40,7 +40,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                         int.Parse(dataReader["NUMEROMESADEJUEGO"].ToString()),
                         Jugador.ObtenerJugador(dataReader["JUGADORUNO"].ToString()),
                         Jugador.ObtenerJugador(dataReader["JUGADORDOS"].ToString()),
-                        tiempo));
+                        MesaDeJuego.TransformarTiempoDeJuego(dataReader["DURACION"].ToString())));
                 }
 
                 return salasDeJuego;
@@ -58,17 +58,18 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         public static void Guardar(MesaDeJuego mesaDeJuego)
         {
+            int duracion = MesaDeJuego.DuracionActualizada;
             try
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"INSERT INTO MESADEJUEGOSALAS (NUMEROMESADEJUEGO, JUGADORUNO, JUGADORDOS, FECHA)" +
-                    $"  VALUES (@NUMEROMESADEJUEGO, @JUGADORUNO, @JUGADORDOS, @FECHA)";
+                command.CommandText = $"INSERT INTO MESADEJUEGOSALAS (NUMEROMESADEJUEGO, JUGADORUNO, JUGADORDOS, DURACION)" +
+                    $"  VALUES (@NUMEROMESADEJUEGO, @JUGADORUNO, @JUGADORDOS, @DURACION)";
                 command.Parameters.AddWithValue("@NUMEROMESADEJUEGO", mesaDeJuego.NumeroMesaDeJuego);
                 command.Parameters.AddWithValue("@JUGADORUNO", mesaDeJuego.JugadorUno.NombreJugador);
                 command.Parameters.AddWithValue("@JUGADORDOS", mesaDeJuego.JugadorDos.NombreJugador);
                 
-                command.Parameters.AddWithValue("@FECHA", mesaDeJuego.DuracionPartida);
+                command.Parameters.AddWithValue("@DURACION", duracion.ToString());
 
                 command.ExecuteNonQuery();
             }

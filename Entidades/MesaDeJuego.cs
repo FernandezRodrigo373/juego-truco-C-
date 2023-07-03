@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -192,16 +193,14 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         public static DateTime TransformarTiempoDeJuego(string tiempo)
         {
-            string[] arraytiempo = new string[2];
+            string[] arraytiempo = tiempo.Split(':');
+
             DateTime dateTime = DateTime.Now;
-            arraytiempo = tiempo.Split(':');
 
             foreach (string item in arraytiempo)
             {
-                dateTime.AddMinutes(Double.Parse(item));
+                dateTime = dateTime.AddMinutes(Double.Parse(item));
             }
-
-
 
             return dateTime;
         }
@@ -277,16 +276,31 @@ namespace FernandezBarbero.Rodrigo.TP2_
             return jugadorGanador;
         }
 
+        private static int duracionActualizada;
+        private static Stopwatch stopwatch;
+
+        public static int DuracionActualizada
+        {
+            get { return duracionActualizada; }
+            set { duracionActualizada = value; }
+        }
+
+        public static void ActualizarDuracion()
+        {
+            duracionActualizada = (int)stopwatch.Elapsed.TotalSeconds;
+        }
 
         public void JugarPartida(Truco mazo, CancellationToken ct)
         {
+            stopwatch = Stopwatch.StartNew();
+
             List<CartaTruco> mazoDeCartas;
             mazoDeCartas = mazo.CrearMazoDeCartas();
 
             mazo.RepartirCartas(mazoDeCartas, this.jugadorUno, this.jugadorDos);
 
             Random tiempoDeEspera = new Random();
-            Thread.Sleep(tiempoDeEspera.Next(1500, 3000));
+            Thread.Sleep(tiempoDeEspera.Next(2000, 3500));
 
             MostrarDatosPartida();
 
@@ -314,6 +328,8 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 this.delegadoCartas?.Invoke($"El ganador de la sala es: {SumarEstadisticasGanador()}");
             }
 
+            stopwatch.Stop();
+            ActualizarDuracion();
         }
 
 

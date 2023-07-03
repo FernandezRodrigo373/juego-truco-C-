@@ -19,7 +19,6 @@ namespace UI
         private MesaDeJuego mesaAux;
         CancellationTokenSource cts;
         private Task taskPartida;
-        bool move = false;
 
         public MostrarPartida(MesaDeJuego mesa)
         {
@@ -91,18 +90,25 @@ namespace UI
         {
             if (taskPartida.IsCompleted)
             {
-
+                lbl_PuntajeJugadorUno.Text = null;
                 lbl_PuntajeJugadorUno.Visible = true;
                 lbl_PuntajeJugadorDos.Visible = true;
+                lbl_Tiempo.Visible = true;
                 lbl_Tiempo.Text = mesaAux.DuracionPartida.ToString();
                 lbl_PuntajeJugadorUno.Text = mesaAux.JugadorUno.CantidadPuntos.ToString();
                 lbl_PuntajeJugadorDos.Text = mesaAux.JugadorDos.CantidadPuntos.ToString();
+            }
+            else
+            {
+                lbl_PuntajeJugadorUno.Visible = true;
+                lbl_PuntajeJugadorUno.Text = "Aguarde a que termine la partida para ver los resultados";
             }
         }
 
         private void GuardarHistorialPuntosPartida()
         {
             string ganador = mesaAux.EstablecerGanador();
+
             StreamWriter escribir = new StreamWriter($"{AppDomain.CurrentDomain.BaseDirectory}" + "HistorialPuntos", true);
 
             try
