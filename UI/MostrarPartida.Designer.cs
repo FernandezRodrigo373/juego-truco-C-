@@ -195,6 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Brown;
             this.ClientSize = new System.Drawing.Size(734, 454);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gb_Datos);
             this.Controls.Add(this.rtb_Partida);

@@ -154,6 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 374);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_Jugador);
             this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.label4);

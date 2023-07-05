@@ -73,7 +73,7 @@
             // 
             this.btn_CrearSala.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_CrearSala.ForeColor = System.Drawing.Color.Black;
-            this.btn_CrearSala.Location = new System.Drawing.Point(13, 387);
+            this.btn_CrearSala.Location = new System.Drawing.Point(166, 267);
             this.btn_CrearSala.Name = "btn_CrearSala";
             this.btn_CrearSala.Size = new System.Drawing.Size(118, 23);
             this.btn_CrearSala.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             this.btn_MostrarSala.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_MostrarSala.ForeColor = System.Drawing.Color.Black;
-            this.btn_MostrarSala.Location = new System.Drawing.Point(13, 358);
+            this.btn_MostrarSala.Location = new System.Drawing.Point(166, 238);
             this.btn_MostrarSala.Name = "btn_MostrarSala";
             this.btn_MostrarSala.Size = new System.Drawing.Size(118, 23);
             this.btn_MostrarSala.TabIndex = 3;
@@ -96,7 +96,7 @@
             // btn_Salir
             // 
             this.btn_Salir.BackColor = System.Drawing.Color.White;
-            this.btn_Salir.Location = new System.Drawing.Point(669, 387);
+            this.btn_Salir.Location = new System.Drawing.Point(669, 328);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 4;
@@ -117,9 +117,9 @@
             // rtb_Sala
             // 
             this.rtb_Sala.BackColor = System.Drawing.Color.White;
-            this.rtb_Sala.Location = new System.Drawing.Point(211, 238);
+            this.rtb_Sala.Location = new System.Drawing.Point(301, 237);
             this.rtb_Sala.Name = "rtb_Sala";
-            this.rtb_Sala.Size = new System.Drawing.Size(371, 172);
+            this.rtb_Sala.Size = new System.Drawing.Size(362, 82);
             this.rtb_Sala.TabIndex = 6;
             this.rtb_Sala.Text = "";
             // 
@@ -128,7 +128,7 @@
             this.lbl_JugadorUno.AutoSize = true;
             this.lbl_JugadorUno.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_JugadorUno.ForeColor = System.Drawing.Color.White;
-            this.lbl_JugadorUno.Location = new System.Drawing.Point(588, 241);
+            this.lbl_JugadorUno.Location = new System.Drawing.Point(13, 303);
             this.lbl_JugadorUno.Name = "lbl_JugadorUno";
             this.lbl_JugadorUno.Size = new System.Drawing.Size(10, 16);
             this.lbl_JugadorUno.TabIndex = 7;
@@ -139,7 +139,7 @@
             this.lbl_JugadorDos.AutoSize = true;
             this.lbl_JugadorDos.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_JugadorDos.ForeColor = System.Drawing.Color.White;
-            this.lbl_JugadorDos.Location = new System.Drawing.Point(588, 286);
+            this.lbl_JugadorDos.Location = new System.Drawing.Point(13, 336);
             this.lbl_JugadorDos.Name = "lbl_JugadorDos";
             this.lbl_JugadorDos.Size = new System.Drawing.Size(10, 16);
             this.lbl_JugadorDos.TabIndex = 8;
@@ -161,7 +161,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(756, 423);
+            this.ClientSize = new System.Drawing.Size(756, 363);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_JugadorDos);
             this.Controls.Add(this.lbl_JugadorUno);

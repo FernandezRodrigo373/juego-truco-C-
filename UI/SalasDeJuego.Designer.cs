@@ -93,6 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(618, 252);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtg_Salas);
             this.Controls.Add(this.btn_MostrarSalas);
