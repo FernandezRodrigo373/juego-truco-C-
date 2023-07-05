@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,11 +18,24 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         static JugadorSql()
         {
+            /*string servidor = "."; 
+            string nombreBaseDeDatos = "DB_Truco"; 
+            string usuario = "sa"; 
+            string password = "alumno"; 
+            connectionString = $"Data Source={servidor};Initial Catalog={nombreBaseDeDatos};User ID={usuario};Password={password}";*/
+
             connectionString = @"Data Source=.;Initial Catalog=DB_Truco;Integrated Security=True";
+
+
             command = new SqlCommand();
             connection = new SqlConnection(connectionString);
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.Text;
+
+
+
+            
+
         }
 
         public static List<Jugador> LeerSql()

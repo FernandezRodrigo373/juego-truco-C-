@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,21 +15,25 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace UI
 {
-    public partial class MostrarPartida : Form
+    public partial class MostrarPartida : Form,IMensajeFormulario
     {
         private MesaDeJuego mesaAux;
         CancellationTokenSource cts;
         private Task taskPartida;
+        private string textoDelLabel = "Partida en curso. Haga silencio por favor";
+        private int indiceLetra = 0;
 
         public MostrarPartida(MesaDeJuego mesa)
         {
             InitializeComponent();
             mesaAux = mesa;
             cts = new CancellationTokenSource();
+            timer1.Tick += timer1_Tick;
         }
 
         private void MostrarPartida_Load(object sender, EventArgs e)
         {
+            MostrarMensaje();
             mesaAux.DelegadoCartas += MostrarPartidaEnCurso;
             taskPartida = Task.Run(JugarUnaPartida);
 
@@ -40,6 +45,27 @@ namespace UI
             lbl_PuntajeJugadorUno.Visible = false;
             lbl_PuntajeJugadorDos.Visible = false;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (indiceLetra < textoDelLabel.Length)
+            {
+                label1.Text += textoDelLabel[indiceLetra];
+                indiceLetra++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        public void MostrarMensaje()
+        {
+            timer1.Start();
+        }
+
+
+
         public void JugarUnaPartida()
         {
 
@@ -94,7 +120,7 @@ namespace UI
                 lbl_PuntajeJugadorUno.Visible = true;
                 lbl_PuntajeJugadorDos.Visible = true;
                 lbl_Tiempo.Visible = true;
-                lbl_Tiempo.Text = mesaAux.DuracionPartida.ToString();
+                lbl_Tiempo.Text = MesaDeJuego.DuracionActualizada.ToString();
                 lbl_PuntajeJugadorUno.Text = mesaAux.JugadorUno.CantidadPuntos.ToString();
                 lbl_PuntajeJugadorDos.Text = mesaAux.JugadorDos.CantidadPuntos.ToString();
             }

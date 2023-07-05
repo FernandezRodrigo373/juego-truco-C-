@@ -43,12 +43,14 @@
             // 
             // btn_Registrar
             // 
+            this.btn_Registrar.BackColor = System.Drawing.Color.White;
+            this.btn_Registrar.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Registrar.Location = new System.Drawing.Point(69, 258);
             this.btn_Registrar.Name = "btn_Registrar";
-            this.btn_Registrar.Size = new System.Drawing.Size(206, 32);
+            this.btn_Registrar.Size = new System.Drawing.Size(206, 40);
             this.btn_Registrar.TabIndex = 0;
             this.btn_Registrar.Text = "REGISTRAR";
-            this.btn_Registrar.UseVisualStyleBackColor = true;
+            this.btn_Registrar.UseVisualStyleBackColor = false;
             this.btn_Registrar.Click += new System.EventHandler(this.btn_Registrar_Click);
             // 
             // label2
@@ -83,12 +85,14 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(245, 339);
+            this.btn_Salir.BackColor = System.Drawing.Color.White;
+            this.btn_Salir.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Salir.Location = new System.Drawing.Point(245, 330);
             this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_Salir.Size = new System.Drawing.Size(75, 32);
             this.btn_Salir.TabIndex = 6;
             this.btn_Salir.Text = "SALIR";
-            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.UseVisualStyleBackColor = false;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // lbl_Clave
@@ -96,7 +100,7 @@
             this.lbl_Clave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Clave.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Clave.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Clave.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_Clave.ForeColor = System.Drawing.Color.Brown;
             this.lbl_Clave.Location = new System.Drawing.Point(144, 170);
             this.lbl_Clave.Name = "lbl_Clave";
             this.lbl_Clave.Size = new System.Drawing.Size(46, 22);
@@ -108,7 +112,7 @@
             this.lbl_Usuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Usuario.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Usuario.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Usuario.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_Usuario.ForeColor = System.Drawing.Color.Brown;
             this.lbl_Usuario.Location = new System.Drawing.Point(133, 104);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(72, 22);
@@ -137,7 +141,7 @@
             // lbl_Jugador
             // 
             this.lbl_Jugador.AutoSize = true;
-            this.lbl_Jugador.Location = new System.Drawing.Point(75, 301);
+            this.lbl_Jugador.Location = new System.Drawing.Point(69, 311);
             this.lbl_Jugador.Name = "lbl_Jugador";
             this.lbl_Jugador.Size = new System.Drawing.Size(10, 15);
             this.lbl_Jugador.TabIndex = 19;
@@ -147,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 374);
             this.Controls.Add(this.lbl_Jugador);
             this.Controls.Add(this.lbl_Error);
@@ -159,6 +164,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Registrar);
+            this.ForeColor = System.Drawing.Color.Brown;
             this.Name = "RegistrarJugador";
             this.Text = "RegistrarJugador";
             this.ResumeLayout(false);

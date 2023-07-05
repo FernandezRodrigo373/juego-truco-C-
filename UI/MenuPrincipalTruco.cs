@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,11 +13,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace UI
 {
-    public partial class MenuPrincipalTruco : Form
+    public partial class MenuPrincipalTruco : Form, IMensajeFormulario
     {
+        private string textoDelLabel = "Bienvenido a CeliTruco. Que lo disfrutes!!!";
+        private int indiceLetra = 0;
+
         public MenuPrincipalTruco()
         {
             InitializeComponent();
+            timer1.Tick += timer1_Tick;
         }
 
         private void btn_RegistrarJugador_Click(object sender, EventArgs e)
@@ -45,6 +50,8 @@ namespace UI
 
         private void MenuPrincipalTruco_Load(object sender, EventArgs e)
         {
+            MostrarMensaje();
+
             List<CartaTruco> cartas = new List<CartaTruco>
             {
             new CartaTruco { Numero = 1, Palo = "Espada", Valor = 14 },
@@ -91,5 +98,23 @@ namespace UI
 
             Serializadora.SerializarAXml("valorCartasTruco.xml", cartas);
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (indiceLetra < textoDelLabel.Length)
+            {
+                label1.Text += textoDelLabel[indiceLetra];
+                indiceLetra++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        public void MostrarMensaje()
+        {
+            timer1.Start();
+        }
     }
+
 }

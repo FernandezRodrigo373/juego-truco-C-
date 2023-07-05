@@ -11,18 +11,22 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class SalasDeJuego : Form
+    public partial class SalasDeJuego : Form,IMensajeFormulario
     {
         private MesaDeJuego MesaDeJuego;
+        private string textoDelLabel = "Elija la sala de juego que desea ver";
+        private int indiceLetra = 0;
         public SalasDeJuego()
         {
             InitializeComponent();
+            timer1.Tick += timer1_Tick;
         }
 
         private void SalasDeJuego_Load(object sender, EventArgs e)
         {
             dtg_Salas.DataSource = MesaDeJuegoSql.Leer();
             RefrescarDataGrid();
+            MostrarMensaje();
         }
         private void RefrescarDataGrid()
         {
@@ -55,6 +59,24 @@ namespace UI
                 mostrarPartidaForm.Show();
 
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (indiceLetra < textoDelLabel.Length)
+            {
+                label1.Text += textoDelLabel[indiceLetra];
+                indiceLetra++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        public void MostrarMensaje()
+        {
+            timer1.Start();
         }
     }
 }

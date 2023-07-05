@@ -13,9 +13,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
     {
         public static void SerializarAXml<T>(string ruta, T objecto)
         {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+
             using (StreamWriter streamWriter = new StreamWriter(ruta))
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
                 xmlSerializer.Serialize(streamWriter, objecto);
             }
         }

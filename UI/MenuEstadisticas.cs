@@ -3,25 +3,58 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class MenuEstadisticas : Form
+    public partial class MenuEstadisticas : Form, IMensajeFormulario
     {
+
+        private string textoDelLabel = "Bienvenido al menu de las estaditicas!!!";
+        private int indiceLetra = 0;
+
         public MenuEstadisticas()
         {
             InitializeComponent();
+            timer1.Tick += timer1_Tick;
+        }
+
+
+        private void MenuEstadisticas_Load(object sender, EventArgs e)
+        {
+            MostrarMensaje();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (indiceLetra < textoDelLabel.Length)
+            {
+                label1.Text += textoDelLabel[indiceLetra];
+                indiceLetra++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        public void MostrarMensaje()
+        {
+            timer1.Start();
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
 
         private void btn_JugadoresConMasVictorias_Click(object sender, EventArgs e)
         {
@@ -92,5 +125,6 @@ namespace UI
             dtg_Datos.Update();
             dtg_Datos.Refresh();
         }
+
     }
 }

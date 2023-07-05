@@ -28,7 +28,7 @@ namespace UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Error. Se ingresaron mal los datos");
+                lbl_Error.Text = ("Error. Se ingresaron mal los datos");
             }
 
 
@@ -36,9 +36,9 @@ namespace UI
             {
                 lbl_Jugador.Visible = true;
                 nuevoJugador.EventoString += NotificarCambio;
+                nuevoJugador.NombreJugador = "Error. El jugador ya esta registrado en el sistema";
                 lbl_Jugador.Text = nuevoJugador.MostrarJugador();
 
-                MessageBox.Show("Error. El jugador ya esta registrado en el sistema");
             }
             else
             {

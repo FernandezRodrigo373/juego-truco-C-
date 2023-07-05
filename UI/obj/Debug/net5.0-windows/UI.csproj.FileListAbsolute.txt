@@ -30,3 +30,4 @@ C:\Users\Rodoo\OneDrive\Escritorio\Cosas\UTN 2023\parcial 2 labo\FernandezBarber
 C:\Users\Rodoo\OneDrive\Escritorio\Cosas\UTN 2023\parcial 2 labo\FernandezBarbero.Rodrigo.TP2\UI\bin\Debug\net5.0-windows\Entidades.dll
 C:\Users\Rodoo\OneDrive\Escritorio\Cosas\UTN 2023\parcial 2 labo\FernandezBarbero.Rodrigo.TP2\UI\bin\Debug\net5.0-windows\Entidades.pdb
 C:\Users\Rodoo\OneDrive\Escritorio\Cosas\UTN 2023\parcial 2 labo\FernandezBarbero.Rodrigo.TP2\UI\obj\Debug\net5.0-windows\UI.csproj.CopyComplete
+C:\Users\Rodoo\OneDrive\Escritorio\Cosas\UTN 2023\parcial 2 labo\FernandezBarbero.Rodrigo.TP2\UI\obj\Debug\net5.0-windows\UI.Properties.Resources.resources

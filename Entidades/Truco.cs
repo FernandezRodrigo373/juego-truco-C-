@@ -281,9 +281,9 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 {
                     jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorDos, 2);
                     sb.AppendLine("2da Ronda:");
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo quiero!!\n");
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 2));
 
                     if (jugadorGanadorRonda == jugadorUno)
@@ -294,7 +294,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                     {
                         jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorDos, 3);
                         sb.AppendLine("3era Ronda:");
-                        Thread.Sleep(new Random().Next(1000, 3000));
+                        Thread.Sleep(new Random().Next(1000, 2500));
                         sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 3));
 
                         if (jugadorGanadorRonda == jugadorUno)
@@ -318,7 +318,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 }
                 else if (jugadorUno.CantarTruco  == true && jugadorDos.QuererTruco == false)
                 {
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo no quiero!!\n");
                     jugadorUno.AcumularPuntosDePartida(3);
                 }
@@ -332,10 +332,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
                         if (jugadorDos.CantarTruco == true && jugadorUno.QuererTruco == true)
                         {
                             jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorDos, 3);
-                            Thread.Sleep(new Random().Next(1000, 3000));
+                            Thread.Sleep(new Random().Next(1000, 2500));
                             sb.AppendLine("3era Ronda:");
                             sb.AppendLine($"El Jugador {jugadorDos.NombreJugador} canto Truco!!, y el jugador {jugadorUno.NombreJugador} dijo quiero!!\n");
-                            Thread.Sleep(new Random().Next(1000, 3000));
+                            Thread.Sleep(new Random().Next(1000, 2500));
                             sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 3));
 
                             if (jugadorGanadorRonda == jugadorDos)
@@ -365,10 +365,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 if (jugadorDos.CantarTruco == true && jugadorUno.QuererTruco == true)
                 {
                     jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorUno, 2);
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine("2da Ronda:");
                     sb.AppendLine($"El Jugador {jugadorDos.NombreJugador} canto Truco!!, y el jugador {jugadorUno.NombreJugador} dijo quiero!!\n");
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 2));
 
                     if (jugadorGanadorRonda == jugadorDos)
@@ -402,14 +402,14 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 }
                 else if (jugadorDos.CantarTruco == true && jugadorUno.QuererTruco == false)// no al truco
                 {
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine($"El Jugador {jugadorDos.NombreJugador} canto Truco!!, y el jugador {jugadorUno.NombreJugador} dijo no quiero!!\n");
                     jugadorDos.AcumularPuntosDePartida(3);
                 }
                 else if (jugadorDos.CantarTruco == false)
                 {
                     jugadorGanadorRonda = TirarCartas(jugadorDos, jugadorUno, 2);
-                    Thread.Sleep(new Random().Next(1000, 3000));
+                    Thread.Sleep(new Random().Next(1000, 2500));
                     sb.AppendLine("2da Ronda:");
                     sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 2));
 
@@ -418,10 +418,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
                         if (jugadorUno.CantarTruco == true && jugadorDos.QuererTruco == true)
                         {
                             jugadorGanadorRonda = TirarCartas(jugadorDos, jugadorUno, 3);
-                            Thread.Sleep(new Random().Next(1000, 3000));
+                            Thread.Sleep(new Random().Next(1000, 2500));
                             sb.AppendLine("3era Ronda:");
                             sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo quiero!!\n");
-                            Thread.Sleep(new Random().Next(1000, 3000));
+                            Thread.Sleep(new Random().Next(1000, 2500));
                             sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 3));
 
                             if (jugadorGanadorRonda == jugadorUno)
@@ -439,7 +439,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                         }
                         else if (jugadorUno.CantarTruco == true && jugadorDos.QuererTruco == false)
                         {
-                            Thread.Sleep(new Random().Next(1000, 3000));
+                            Thread.Sleep(new Random().Next(1000, 2500));
                             sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo no quiero!!\n");
                             jugadorUno.AcumularPuntosDePartida(3);
                         }
@@ -453,10 +453,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
                     if (jugadorUno.CantarTruco == true && jugadorDos.QuererTruco == true)
                     {
                         jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorDos, 2);
-                        Thread.Sleep(new Random().Next(1000, 3000));
+                        Thread.Sleep(new Random().Next(1000, 2500));
                         sb.AppendLine("2da Ronda:");
                         sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo quiero!!\n");
-                        Thread.Sleep(new Random().Next(1000, 3000));
+                        Thread.Sleep(new Random().Next(1000, 2500));
                         sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 2));
 
                         if (jugadorGanadorRonda == jugadorUno)
@@ -489,7 +489,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                     }
                     else if (jugadorUno.CantarTruco == true && jugadorDos.QuererTruco == false)// no al truco
                     {
-                        Thread.Sleep(new Random().Next(1000, 3000));
+                        Thread.Sleep(new Random().Next(1000, 2500));
                         sb.AppendLine($"El Jugador {jugadorUno.NombreJugador} canto Truco!!, y el jugador {jugadorDos.NombreJugador} dijo no quiero!!\n");
                         jugadorUno.AcumularPuntosDePartida(3);
                     }
@@ -504,10 +504,10 @@ namespace FernandezBarbero.Rodrigo.TP2_
                             if (jugadorDos.CantarTruco == true && jugadorUno.QuererTruco == true)
                             {
                                 jugadorGanadorRonda = TirarCartas(jugadorUno, jugadorDos, 3);
-                                Thread.Sleep(new Random().Next(1000, 3000));
+                                Thread.Sleep(new Random().Next(1000, 2500));
                                 sb.AppendLine("3era Ronda:");
                                 sb.AppendLine($"El Jugador {jugadorDos.NombreJugador} canto Truco!!, y el jugador {jugadorUno.NombreJugador} dijo quiero!!\n");
-                                Thread.Sleep(new Random().Next(1000, 3000));
+                                Thread.Sleep(new Random().Next(1000, 2500));
                                 sb.AppendLine(MostrarCartasJugadas(jugadorUno, jugadorDos, 3));
 
                                 if (jugadorGanadorRonda == jugadorDos)
@@ -745,7 +745,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 jugadorDos.AcumularPuntosDePartida(1);
             }
 
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
 
             sb.AppendLine(MostrarCartasTruco(jugadorUno, jugadorDos));
 

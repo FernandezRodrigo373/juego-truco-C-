@@ -11,25 +11,51 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class CrearSalasDeJuego : Form
+    public partial class CrearSalasDeJuego : Form, IMensajeFormulario
     {
         private Jugador jugadorUno;
         private Jugador jugadorDos;
         private Action<string> delegadoUnoCartas;
 
+        private string textoDelLabel = "Bienvenido al creador de salas. A jugar!!!";
+        private int indiceLetra = 0;
+
+
         public CrearSalasDeJuego()
         {
             InitializeComponent();
             delegadoUnoCartas = MostrarCartasRepartidas;
+            timer1.Tick += timer1_Tick;
 
         }
 
         private void CrearSalasDeJuego_Load(object sender, EventArgs e)
         {
+            dtg_Jugadores.DataSource = null;
             RefrescarDataGrid();
             rtb_Sala.Visible = false;
             btn_CrearSala.Visible = false;
+            MostrarMensaje();
 
+        }
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (indiceLetra < textoDelLabel.Length)
+            {
+                label1.Text += textoDelLabel[indiceLetra];
+                indiceLetra++;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+
+        public void MostrarMensaje()
+        {
+            timer1.Start();
         }
 
         private void RefrescarDataGrid()

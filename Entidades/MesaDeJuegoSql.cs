@@ -10,15 +10,23 @@ namespace FernandezBarbero.Rodrigo.TP2_
 {
     public class MesaDeJuegoSql
     {
-        static string connectionStriing;
+        static string connectionString;
         static SqlCommand command;
         static SqlConnection connection;
 
         static MesaDeJuegoSql()
         {
-            connectionStriing = @"Data Source = .; Database = DB_TRUCO; Trusted_Connection=True";   
+            /*string servidor = "."; 
+            string nombreBaseDeDatos = "DB_Truco"; 
+            string usuario = "sa"; 
+            string password = "alumno"; 
+            connectionString = $"Data Source={servidor};Initial Catalog={nombreBaseDeDatos};User ID={usuario};Password={password}";*/
+
+            connectionString = @"Data Source=.;Initial Catalog=DB_Truco;Integrated Security=True";
+
+
             command = new SqlCommand();
-            connection = new SqlConnection(connectionStriing);
+            connection = new SqlConnection(connectionString);
             command.Connection = connection;
             command.CommandType = System.Data.CommandType.Text;
         }

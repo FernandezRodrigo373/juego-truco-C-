@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Rodoo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Rodoo\\.nuget\\packages"
+    ]
+  }
+}

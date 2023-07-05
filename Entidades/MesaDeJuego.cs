@@ -277,7 +277,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
         }
 
         private static int duracionActualizada;
-        private static Stopwatch stopwatch;
+        private static Stopwatch cronometro;
 
         public static int DuracionActualizada
         {
@@ -287,12 +287,12 @@ namespace FernandezBarbero.Rodrigo.TP2_
 
         public static void ActualizarDuracion()
         {
-            duracionActualizada = (int)stopwatch.Elapsed.TotalSeconds;
+            duracionActualizada = (int)cronometro.Elapsed.TotalSeconds;
         }
 
         public void JugarPartida(Truco mazo, CancellationToken ct)
         {
-            stopwatch = Stopwatch.StartNew();
+            cronometro = Stopwatch.StartNew();
 
             List<CartaTruco> mazoDeCartas;
             mazoDeCartas = mazo.CrearMazoDeCartas();
@@ -328,7 +328,7 @@ namespace FernandezBarbero.Rodrigo.TP2_
                 this.delegadoCartas?.Invoke($"El ganador de la sala es: {SumarEstadisticasGanador()}");
             }
 
-            stopwatch.Stop();
+            cronometro.Stop();
             ActualizarDuracion();
         }
 
