@@ -53,7 +53,7 @@ namespace Entidades.Test
         }
 
         [TestMethod]
-        public void ProbarDevolverGanadorJugarCartas()
+        public void ProbarDevolverGanadorRepartirCartas()
         {
             List<CartaTruco> Cartas1 = new List<CartaTruco>();
             List<CartaTruco> Cartas2 = new List<CartaTruco>();
@@ -73,7 +73,7 @@ namespace Entidades.Test
         }
 
         [TestMethod]
-        public void ProbarRepartirCartasDeMaso()
+        public void ProbarCrearMazoDeCartas()
         {
             List<CartaTruco> Cartas1 = new List<CartaTruco>();
             List<CartaTruco> Cartas2 = new List<CartaTruco>();
@@ -143,7 +143,7 @@ namespace Entidades.Test
         }
 
         [TestMethod]
-        public void ProbarMostrarGanadorSala()
+        public void ProbarEstablecerGanador()
         {
             CancellationToken cancellationToken = new CancellationToken();
             string pruebaAuxGanador = null;
@@ -205,7 +205,7 @@ namespace Entidades.Test
         }
 
         [TestMethod]
-        public void ProbarObtenerJugadorPorElnombre()
+        public void ProbarObtenerJugador()
         {
             Jugador auxJugador = Jugador.ObtenerJugador("Raul");
 
@@ -225,7 +225,7 @@ namespace Entidades.Test
         }
 
         [TestMethod]
-        public void ProbarEstaEnPartidaCambiarEstado()
+        public void ProbarEstaJugando()
         {
             string pruebaAuxEstado;
             List<CartaTruco> Cartas2 = new List<CartaTruco>();

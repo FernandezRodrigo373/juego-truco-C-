@@ -80,6 +80,7 @@
             // 
             this.txb_Clave.Location = new System.Drawing.Point(69, 195);
             this.txb_Clave.Name = "txb_Clave";
+            this.txb_Clave.PasswordChar = '*';
             this.txb_Clave.Size = new System.Drawing.Size(206, 23);
             this.txb_Clave.TabIndex = 5;
             // 
